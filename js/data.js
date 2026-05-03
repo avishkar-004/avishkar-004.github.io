@@ -69,68 +69,52 @@ var PORTFOLIO_DATA = {
   "projects": [
     {
       "id": "minidb",
-      "title": "Distributed Database (MiniDB)",
-      "subtitle": "Production-grade Key-Value Database with ACID Transactions",
+      "title": "MiniDB \u2014 Distributed Database",
+      "subtitle": "Key-Value Database with ACID Transactions & Raft Consensus",
       "category": "distributed-systems",
       "tags": [
-        "C++",
+        "C++17",
         "Distributed Systems",
-        "Databases"
+        "Raft",
+        "MVCC",
+        "B+ Tree"
       ],
-      "thumbnail": "assets/minidb-thumb.jpg",
-      "banner": "assets/minidb-banner.jpg",
-      "description": "Built a distributed key-value database from scratch in C++ with B+ Tree indexing, MVCC concurrency control, and Raft consensus algorithm.",
-      "duration": "6 weeks",
-      "status": "Complete (All 6 Phases)",
+      "description": "Built a distributed key-value database from scratch with B+ Tree indexing, MVCC concurrency control, Raft consensus, full SQL-like query processing with JOINs, consistent hash sharding, and HTTP monitoring.",
       "github": "https://github.com/avishkar-004/minidb",
       "demo": null,
-      "highlights": [
-        "10,000+ concurrent transactions with <1ms latency",
-        "B+ Tree indexing with LRU buffer pool (60% faster disk I/O)",
-        "MVCC-based transaction isolation with snapshot reads",
-        "Raft consensus for 3-node cluster with automatic failover",
-        "Write-Ahead Logging for crash recovery"
-      ],
-      "technologies": {
-        "primary": "C++17",
-        "secondary": [
-          "Boost.Asio",
-          "Protocol Buffers",
-          "CMake",
-          "Google Test"
-        ]
-      },
       "metrics": {
         "throughput": "10,000+ ops/sec",
         "latency": "<1ms",
-        "concurrent_transactions": "1000+",
-        "nodes": "3-node cluster"
+        "commits": "99"
+      },
+      "technologies": {
+        "primary": "C++17",
+        "secondary": [
+          "CMake",
+          "Google Test",
+          "POSIX Sockets"
+        ]
       }
     },
     {
       "id": "streamflow",
-      "title": "Event Streaming Platform (StreamFlow)",
+      "title": "StreamFlow \u2014 Event Streaming Platform",
       "subtitle": "Kafka-like Distributed Message Queue",
       "category": "distributed-systems",
       "tags": [
-        "Java",
+        "Java 17",
         "Spring Boot",
-        "Distributed Systems"
+        "Netty",
+        "Docker"
       ],
-      "thumbnail": "assets/streamflow-thumb.jpg",
-      "banner": "assets/streamflow-banner.jpg",
-      "description": "Architected a distributed message queue system similar to Apache Kafka with consumer groups, partition replication, and Spring Boot admin API.",
-      "duration": "6 weeks",
-      "status": "Complete (6/6 Phases)",
+      "description": "Architected a Kafka-like distributed message queue with consumer groups, leader-follower replication, ISR tracking, zero-copy transfer, Spring Boot admin API, and Prometheus monitoring.",
       "github": "https://github.com/avishkar-004/streamflow",
       "demo": null,
-      "highlights": [
-        "Processing 50,000+ messages/sec with guaranteed ordering",
-        "Consumer group coordination with automatic rebalancing",
-        "Log-based storage with memory-mapped files and zero-copy transfer",
-        "REST API with Prometheus metrics integration",
-        "Docker containerized deployment"
-      ],
+      "metrics": {
+        "throughput": "50,000+ msg/sec",
+        "consumers": "100+ concurrent",
+        "commits": "78"
+      },
       "technologies": {
         "primary": "Java 17",
         "secondary": [
@@ -139,157 +123,115 @@ var PORTFOLIO_DATA = {
           "Docker",
           "Prometheus"
         ]
-      },
-      "metrics": {
-        "throughput": "50,000+ msg/sec",
-        "consumers": "100+ concurrent",
-        "latency": "<100ms rebalance",
-        "partitions": "32 partitions"
       }
     },
     {
       "id": "vectorflow",
-      "title": "AI-Powered Vector Database (VectorFlow)",
-      "subtitle": "Semantic Search Engine with RAG Pipeline",
+      "title": "VectorFlow \u2014 AI Vector Database",
+      "subtitle": "Semantic Search Engine with HNSW & RAG Pipeline",
       "category": "ai-ml",
       "tags": [
         "Python",
-        "AI/ML",
-        "Vector Search"
+        "FastAPI",
+        "HNSW",
+        "NumPy",
+        "Numba"
       ],
-      "thumbnail": "assets/vectorflow-thumb.jpg",
-      "banner": "assets/vectorflow-banner.jpg",
-      "description": "Built a vector database implementing HNSW algorithm for approximate nearest neighbor search with OpenAI embeddings integration.",
-      "duration": "4-6 weeks",
-      "status": "Complete",
+      "description": "Built a vector database with HNSW indexing for ANN search, Numba JIT optimization (10x speedup), FastAPI REST server, WAL persistence, consistent hash sharding, and RAG pipeline with OpenAI integration.",
       "github": "https://github.com/avishkar-004/vectorflow",
       "demo": null,
-      "highlights": [
-        "1,000,000+ vectors indexed with 95%+ recall",
-        "HNSW algorithm for sub-100ms query latency",
-        "Numba JIT optimization (10x speedup)",
-        "RAG pipeline with OpenAI + LangChain integration",
-        "FastAPI server with async endpoints"
-      ],
+      "metrics": {
+        "vectors": "1M+",
+        "latency": "<100ms",
+        "recall": "95%+",
+        "commits": "52"
+      },
       "technologies": {
         "primary": "Python 3.11",
         "secondary": [
           "FastAPI",
           "NumPy",
           "Numba",
-          "OpenAI API",
-          "LangChain"
+          "OpenAI"
         ]
-      },
-      "metrics": {
-        "vectors": "1M+",
-        "latency": "<100ms",
-        "recall": "95%+",
-        "dimensions": "1536"
       }
     },
     {
-      "id": "grocery-delivery",
-      "title": "Grocery Delivery System",
-      "subtitle": "Real-time Quotation Platform",
-      "category": "full-stack",
-      "tags": [
-        "React",
-        "Node.js",
-        "MySQL"
-      ],
-      "thumbnail": "assets/grocery-thumb.jpg",
-      "banner": "assets/grocery-banner.jpg",
-      "description": "Full-stack web application enabling real-time quotation and order negotiation between buyers and local shop owners.",
-      "duration": "2 months",
-      "status": "Complete",
-      "github": null,
-      "demo": null,
-      "highlights": [
-        "Role-based dashboards for buyers, shops, and admin",
-        "Real-time order tracking with GPS location",
-        "Notification system for live status updates",
-        "React + Tailwind CSS frontend",
-        "Express.js + MySQL backend"
-      ],
-      "technologies": {
-        "primary": "React.js",
-        "secondary": [
-          "Node.js",
-          "Express.js",
-          "MySQL",
-          "Tailwind CSS"
-        ]
-      },
-      "metrics": {}
-    },
-    {
-      "id": "smart-agriculture",
-      "title": "Smart Agriculture Platform (KrushiDhan)",
-      "subtitle": "Bilingual Platform for Farmers",
-      "category": "full-stack",
-      "tags": [
-        "React",
-        "Node.js",
-        "AI"
-      ],
-      "thumbnail": "assets/agriculture-thumb.jpg",
-      "banner": "assets/agriculture-banner.jpg",
-      "description": "Digital platform empowering farmers with real-time market data, weather forecasting, and AI-powered scheme recommendations.",
-      "duration": "3 months",
-      "status": "Complete",
-      "github": "https://github.com/avishkar-004/KrushiDhan",
-      "demo": null,
-      "highlights": [
-        "Bilingual support (Marathi + English)",
-        "Real-time market prices and weather forecasting",
-        "AI-powered government scheme recommendations",
-        "Equipment rental and cold storage locator",
-        "Direct-to-consumer selling feature"
-      ],
-      "technologies": {
-        "primary": "React.js",
-        "secondary": [
-          "Node.js",
-          "Express.js",
-          "MySQL"
-        ]
-      },
-      "metrics": {}
-    },
-    {
-      "id": "eye-disease-detection",
+      "id": "eye-disease",
       "title": "Eye Disease Detection",
-      "subtitle": "Deep Learning for Medical Imaging",
+      "subtitle": "CNN-based Retinal Image Classification",
       "category": "ai-ml",
       "tags": [
         "Python",
-        "Deep Learning",
-        "Computer Vision"
+        "TensorFlow",
+        "Flask",
+        "Deep Learning"
       ],
-      "thumbnail": null,
-      "banner": null,
-      "description": "Deep learning-based system for detecting eye diseases from retinal images using convolutional neural networks and transfer learning techniques.",
-      "duration": null,
-      "status": "Complete",
+      "description": "Deep learning model for automated detection of eye diseases (cataract, diabetic retinopathy, glaucoma) from retinal images using CNN. Deployed with Flask web interface.",
       "github": "https://github.com/avishkar-004/Eye-Disease-Detection-Using-Deep-Learning",
       "demo": null,
-      "highlights": [
-        "CNN-based classification of retinal diseases",
-        "Transfer learning with pre-trained models",
-        "Image preprocessing and augmentation pipeline",
-        "Medical imaging analysis with high accuracy"
-      ],
+      "metrics": {
+        "classes": "4",
+        "dataset": "4,200+ images"
+      },
       "technologies": {
         "primary": "Python",
         "secondary": [
           "TensorFlow",
           "Keras",
-          "OpenCV",
-          "NumPy"
+          "Flask",
+          "OpenCV"
         ]
-      },
-      "metrics": {}
+      }
+    },
+    {
+      "id": "krushidhan",
+      "title": "KrushiDhan \u2014 Smart Agriculture",
+      "subtitle": "Bilingual Platform for Farmers",
+      "category": "full-stack",
+      "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express"
+      ],
+      "description": "Full-stack platform empowering farmers with real-time market prices, weather forecasting, AI-powered government scheme recommendations, crop disease detection, and equipment rental marketplace.",
+      "github": "https://github.com/avishkar-004/KrushiDhan",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "React.js",
+        "secondary": [
+          "Node.js",
+          "Express.js",
+          "MongoDB"
+        ]
+      }
+    },
+    {
+      "id": "player-reid",
+      "title": "Player Re-Identification",
+      "subtitle": "Sports Footage Computer Vision System",
+      "category": "ai-ml",
+      "tags": [
+        "Python",
+        "PyTorch",
+        "YOLO",
+        "Computer Vision"
+      ],
+      "description": "Computer vision system for re-identifying players across camera angles in sports footage using YOLO detection and deep feature-based ReID tracking.",
+      "github": "https://github.com/avishkar-004/Player-Re-Identification-in-Sports-Footage-",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "Python",
+        "secondary": [
+          "PyTorch",
+          "Ultralytics",
+          "OpenCV",
+          "SciPy"
+        ]
+      }
     },
     {
       "id": "blood-connect",
@@ -298,32 +240,147 @@ var PORTFOLIO_DATA = {
       "category": "full-stack",
       "tags": [
         "TypeScript",
-        "Full-Stack",
-        "Healthcare"
+        "React",
+        "Shadcn UI",
+        "Vite"
       ],
-      "thumbnail": null,
-      "banner": null,
-      "description": "Full-stack blood bank management system enabling donors and recipients to connect efficiently, with inventory tracking and request management.",
-      "duration": null,
-      "status": "Complete",
+      "description": "Full-featured blood bank portal with donor/recipient/admin roles, blood request matching, inventory management, donation camps, and real-time notifications.",
       "github": "https://github.com/avishkar-004/blood-connect",
       "demo": null,
-      "highlights": [
-        "Donor-recipient matching and notification system",
-        "Blood inventory tracking and management",
-        "Request and fulfillment workflow",
-        "TypeScript full-stack implementation"
-      ],
+      "metrics": {},
       "technologies": {
         "primary": "TypeScript",
         "secondary": [
           "React",
-          "Node.js",
-          "Express.js",
-          "MongoDB"
+          "Vite",
+          "Shadcn UI",
+          "Tailwind"
         ]
-      },
-      "metrics": {}
+      }
+    },
+    {
+      "id": "flash-commerce",
+      "title": "Flash Commerce UI",
+      "subtitle": "Modern E-Commerce Platform",
+      "category": "full-stack",
+      "tags": [
+        "TypeScript",
+        "React",
+        "Tailwind",
+        "Vite"
+      ],
+      "description": "Modern e-commerce UI with buyer/seller/admin portals, product management, cart system, checkout flow, and responsive design built with React and Shadcn UI.",
+      "github": "https://github.com/avishkar-004/flash-commerce-ui",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "TypeScript",
+        "secondary": [
+          "React",
+          "Vite",
+          "Tailwind CSS",
+          "Shadcn UI"
+        ]
+      }
+    },
+    {
+      "id": "dark-store",
+      "title": "Dark Store Network Projection",
+      "subtitle": "ML-Powered Location Analytics",
+      "category": "ai-ml",
+      "tags": [
+        "Python",
+        "React",
+        "XGBoost",
+        "FastAPI"
+      ],
+      "description": "ML pipeline using KMeans clustering and XGBoost for optimal dark store placement. Features Gemini-powered impact analysis, React dashboard with Leaflet maps, and Node.js backend.",
+      "github": "https://github.com/avishkar-004/city-wide-dark-store-network-projection",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "Python + React",
+        "secondary": [
+          "FastAPI",
+          "XGBoost",
+          "Node.js",
+          "Leaflet"
+        ]
+      }
+    },
+    {
+      "id": "energy-prediction",
+      "title": "Energy Prediction System",
+      "subtitle": "Energy Consumption Analytics Dashboard",
+      "category": "full-stack",
+      "tags": [
+        "JavaScript",
+        "React",
+        "Charts",
+        "Vite"
+      ],
+      "description": "Energy consumption prediction and visualization system with interactive dashboards, real-time graphs, ideal value comparisons, and detailed reports.",
+      "github": "https://github.com/avishkar-004/EnergyPrediction",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "JavaScript",
+        "secondary": [
+          "React",
+          "Vite",
+          "Recharts",
+          "Tailwind"
+        ]
+      }
+    },
+    {
+      "id": "auth-system",
+      "title": "Authentication System",
+      "subtitle": "Full-Stack Auth with JWT",
+      "category": "full-stack",
+      "tags": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MySQL"
+      ],
+      "description": "Secure authentication system with user registration, JWT-based login, session management, and React frontend with Express.js backend.",
+      "github": "https://github.com/avishkar-004/authentication-system",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "JavaScript",
+        "secondary": [
+          "React",
+          "Express.js",
+          "MySQL",
+          "JWT"
+        ]
+      }
+    },
+    {
+      "id": "society-mgmt",
+      "title": "Society Management System",
+      "subtitle": "DBMS Project with PHP & MySQL",
+      "category": "full-stack",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS"
+      ],
+      "description": "Web-based residential society administration system with member management, complaint tracking, notice board, payment records, and photo gallery. Built as a DBMS course project.",
+      "github": "https://github.com/avishkar-004/dbms-project-using-php-society-management-system",
+      "demo": null,
+      "metrics": {},
+      "technologies": {
+        "primary": "PHP",
+        "secondary": [
+          "MySQL",
+          "HTML/CSS",
+          "Bootstrap"
+        ]
+      }
     }
   ],
   "experience": [
@@ -473,7 +530,7 @@ var PORTFOLIO_DATA = {
   ],
   "stats": {
     "cgpa": "9.24",
-    "projects": "7+",
+    "projects": "12+",
     "technologies": "25+",
     "certifications": "8+"
   }
