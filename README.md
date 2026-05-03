@@ -101,31 +101,27 @@ HNSW indexing for ANN search, FastAPI REST server, WAL persistence, consistent h
 
 ---
 
-### 📊 GitHub Stats
+### 📊 GitHub Activity
 
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=avishkar-004&show_icons=true&theme=default&hide_border=true&bg_color=F7F5F2&title_color=2D7A71&icon_color=3A8F85&text_color=2C3E50)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=avishkar-004&layout=compact&theme=default&hide_border=true&bg_color=F7F5F2&title_color=2D7A71&text_color=2C3E50)
-
-</div>
+| Metric | Value |
+|--------|-------|
+| **Public Repos** | 27 |
+| **Flagship Projects** | 3 (MiniDB, StreamFlow, VectorFlow) |
+| **Total Commits** | 229+ across flagship projects |
+| **Languages** | C++, Java, Python, TypeScript, JavaScript, PHP |
+| **Contribution Timeline** | Jul 2025 — Present |
 
 ---
 
-### 📜 Certifications (13)
+### 📜 Certifications
 
 | Certification | Issuer |
 |---|---|
 | CCNA: Introduction to Networks | Cisco |
 | CCNA: Switching, Routing, and Wireless | Cisco |
 | CCNA: Enterprise Networking, Security | Cisco |
-| Python Essentials 1 & 2 | Cisco |
-| Introduction to Cybersecurity | Cisco |
 | PCAP: Programming Essentials in Python | Python Institute |
 | Programming in Modern C++ | NPTEL |
-| DSA using Python | NPTEL |
-| Cloud Computing | NPTEL |
 | Introduction to Machine Learning | NPTEL |
 | CS260: Cryptography & Network Security | Saylor University |
 | Red Hat Academy Program | Red Hat |

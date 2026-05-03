@@ -204,7 +204,7 @@ var PORTFOLIO_DATA = {
       "duration": "2 months",
       "status": "Complete",
       "github": null,
-      "demo": "https://grocerybid.akshitdhake.com/",
+      "demo": null,
       "highlights": [
         "Role-based dashboards for buyers, shops, and admin",
         "Real-time order tracking with GPS location",
@@ -239,7 +239,7 @@ var PORTFOLIO_DATA = {
       "duration": "3 months",
       "status": "Complete",
       "github": "https://github.com/avishkar-004/KrushiDhan",
-      "demo": "https://front.avishkar.digital/",
+      "demo": null,
       "highlights": [
         "Bilingual support (Marathi + English)",
         "Real-time market prices and weather forecasting",
