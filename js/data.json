@@ -3,7 +3,7 @@
     "name": "Avishkar Mahesh Pawar",
     "title": "Computer Engineering Student | Systems & AI/ML Engineer",
     "tagline": "Building production-grade distributed systems from scratch",
-    "bio": "Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. Built 3 production-grade distributed systems from scratch — a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) — a 3x rank improvement from GATE 2025. Currently working as a Software Developer at OSMOS.",
+    "bio": "Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. Built 3 production-grade distributed systems from scratch \u2014 a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) \u2014 a 3x rank improvement from GATE 2025. Currently working as a Software Developer at OSMOS.",
     "image": "assets/profile.png",
     "resume": "resumes/Avishkar_Pawar_SDE_Resume.pdf",
     "email": "avishkarpawar004@gmail.com",
@@ -16,7 +16,6 @@
       "credly": "https://www.credly.com/users/avishkar-pawar"
     }
   },
-
   "education": {
     "degree": "B.Tech. - Computer Engineering",
     "university": "MIT Academy of Engineering, Pune",
@@ -25,22 +24,59 @@
     "cgpa_scale": "10",
     "logo": "assets/mit-logo.png"
   },
-
   "skills": {
-    "languages": ["C++", "Java", "Python", "JavaScript", "TypeScript", "SQL"],
-    "frameworks": ["Spring Boot", "FastAPI", "React", "Node.js", "Express.js", "Vue.js"],
-    "databases": ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
-    "tools": ["Git", "Docker", "Linux", "AWS", "CMake", "Maven"],
-    "concepts": ["Data Structures & Algorithms", "Operating Systems", "Database Systems", "Computer Networks", "Distributed Systems", "System Design", "Deep Learning", "Computer Vision"]
+    "languages": [
+      "C++",
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "SQL"
+    ],
+    "frameworks": [
+      "Spring Boot",
+      "FastAPI",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Vue.js"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis"
+    ],
+    "tools": [
+      "Git",
+      "Docker",
+      "Linux",
+      "AWS",
+      "CMake",
+      "Maven"
+    ],
+    "concepts": [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Database Systems",
+      "Computer Networks",
+      "Distributed Systems",
+      "System Design",
+      "Deep Learning",
+      "Computer Vision"
+    ]
   },
-
   "projects": [
     {
       "id": "minidb",
       "title": "Distributed Database (MiniDB)",
       "subtitle": "Production-grade Key-Value Database with ACID Transactions",
       "category": "distributed-systems",
-      "tags": ["C++", "Distributed Systems", "Databases"],
+      "tags": [
+        "C++",
+        "Distributed Systems",
+        "Databases"
+      ],
       "thumbnail": "assets/minidb-thumb.jpg",
       "banner": "assets/minidb-banner.jpg",
       "description": "Built a distributed key-value database from scratch in C++ with B+ Tree indexing, MVCC concurrency control, and Raft consensus algorithm.",
@@ -57,7 +93,12 @@
       ],
       "technologies": {
         "primary": "C++17",
-        "secondary": ["Boost.Asio", "Protocol Buffers", "CMake", "Google Test"]
+        "secondary": [
+          "Boost.Asio",
+          "Protocol Buffers",
+          "CMake",
+          "Google Test"
+        ]
       },
       "metrics": {
         "throughput": "10,000+ ops/sec",
@@ -71,7 +112,11 @@
       "title": "Event Streaming Platform (StreamFlow)",
       "subtitle": "Kafka-like Distributed Message Queue",
       "category": "distributed-systems",
-      "tags": ["Java", "Spring Boot", "Distributed Systems"],
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Distributed Systems"
+      ],
       "thumbnail": "assets/streamflow-thumb.jpg",
       "banner": "assets/streamflow-banner.jpg",
       "description": "Architected a distributed message queue system similar to Apache Kafka with consumer groups, partition replication, and Spring Boot admin API.",
@@ -88,7 +133,12 @@
       ],
       "technologies": {
         "primary": "Java 17",
-        "secondary": ["Spring Boot", "Netty", "Docker", "Prometheus"]
+        "secondary": [
+          "Spring Boot",
+          "Netty",
+          "Docker",
+          "Prometheus"
+        ]
       },
       "metrics": {
         "throughput": "50,000+ msg/sec",
@@ -102,7 +152,11 @@
       "title": "AI-Powered Vector Database (VectorFlow)",
       "subtitle": "Semantic Search Engine with RAG Pipeline",
       "category": "ai-ml",
-      "tags": ["Python", "AI/ML", "Vector Search"],
+      "tags": [
+        "Python",
+        "AI/ML",
+        "Vector Search"
+      ],
       "thumbnail": "assets/vectorflow-thumb.jpg",
       "banner": "assets/vectorflow-banner.jpg",
       "description": "Built a vector database implementing HNSW algorithm for approximate nearest neighbor search with OpenAI embeddings integration.",
@@ -119,7 +173,13 @@
       ],
       "technologies": {
         "primary": "Python 3.11",
-        "secondary": ["FastAPI", "NumPy", "Numba", "OpenAI API", "LangChain"]
+        "secondary": [
+          "FastAPI",
+          "NumPy",
+          "Numba",
+          "OpenAI API",
+          "LangChain"
+        ]
       },
       "metrics": {
         "vectors": "1M+",
@@ -133,7 +193,11 @@
       "title": "Grocery Delivery System",
       "subtitle": "Real-time Quotation Platform",
       "category": "full-stack",
-      "tags": ["React", "Node.js", "MySQL"],
+      "tags": [
+        "React",
+        "Node.js",
+        "MySQL"
+      ],
       "thumbnail": "assets/grocery-thumb.jpg",
       "banner": "assets/grocery-banner.jpg",
       "description": "Full-stack web application enabling real-time quotation and order negotiation between buyers and local shop owners.",
@@ -150,7 +214,12 @@
       ],
       "technologies": {
         "primary": "React.js",
-        "secondary": ["Node.js", "Express.js", "MySQL", "Tailwind CSS"]
+        "secondary": [
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Tailwind CSS"
+        ]
       },
       "metrics": {}
     },
@@ -159,7 +228,11 @@
       "title": "Smart Agriculture Platform (KrushiDhan)",
       "subtitle": "Bilingual Platform for Farmers",
       "category": "full-stack",
-      "tags": ["React", "Node.js", "AI"],
+      "tags": [
+        "React",
+        "Node.js",
+        "AI"
+      ],
       "thumbnail": "assets/agriculture-thumb.jpg",
       "banner": "assets/agriculture-banner.jpg",
       "description": "Digital platform empowering farmers with real-time market data, weather forecasting, and AI-powered scheme recommendations.",
@@ -176,7 +249,11 @@
       ],
       "technologies": {
         "primary": "React.js",
-        "secondary": ["Node.js", "Express.js", "MySQL"]
+        "secondary": [
+          "Node.js",
+          "Express.js",
+          "MySQL"
+        ]
       },
       "metrics": {}
     },
@@ -185,7 +262,11 @@
       "title": "Eye Disease Detection",
       "subtitle": "Deep Learning for Medical Imaging",
       "category": "ai-ml",
-      "tags": ["Python", "Deep Learning", "Computer Vision"],
+      "tags": [
+        "Python",
+        "Deep Learning",
+        "Computer Vision"
+      ],
       "thumbnail": null,
       "banner": null,
       "description": "Deep learning-based system for detecting eye diseases from retinal images using convolutional neural networks and transfer learning techniques.",
@@ -201,7 +282,12 @@
       ],
       "technologies": {
         "primary": "Python",
-        "secondary": ["TensorFlow", "Keras", "OpenCV", "NumPy"]
+        "secondary": [
+          "TensorFlow",
+          "Keras",
+          "OpenCV",
+          "NumPy"
+        ]
       },
       "metrics": {}
     },
@@ -210,7 +296,11 @@
       "title": "Blood Connect",
       "subtitle": "Blood Bank Management System",
       "category": "full-stack",
-      "tags": ["TypeScript", "Full-Stack", "Healthcare"],
+      "tags": [
+        "TypeScript",
+        "Full-Stack",
+        "Healthcare"
+      ],
       "thumbnail": null,
       "banner": null,
       "description": "Full-stack blood bank management system enabling donors and recipients to connect efficiently, with inventory tracking and request management.",
@@ -226,12 +316,16 @@
       ],
       "technologies": {
         "primary": "TypeScript",
-        "secondary": ["React", "Node.js", "Express.js", "MongoDB"]
+        "secondary": [
+          "React",
+          "Node.js",
+          "Express.js",
+          "MongoDB"
+        ]
       },
       "metrics": {}
     }
   ],
-
   "experience": [
     {
       "company": "OSMOS",
@@ -246,7 +340,13 @@
         "Contributed to product development from scratch",
         "Built scalable solutions ensuring high performance"
       ],
-      "technologies": ["Node.js", "Python", "MySQL", "System Design", "Microservices"]
+      "technologies": [
+        "Node.js",
+        "Python",
+        "MySQL",
+        "System Design",
+        "Microservices"
+      ]
     },
     {
       "company": "Core-Decimal Solutions",
@@ -261,7 +361,13 @@
         "Developed reusable Vue.js components",
         "Designed Sequelize models for dynamic UI mapping"
       ],
-      "technologies": ["Vue.js", "Node.js", "Express.js", "MySQL", "Sequelize"]
+      "technologies": [
+        "Vue.js",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "Sequelize"
+      ]
     },
     {
       "company": "Campus Credential",
@@ -276,22 +382,30 @@
         "Implemented resident management and complaint tracking",
         "Developed event scheduling and community features"
       ],
-      "technologies": ["React.js", "Express.js", "JavaScript", "Databases"]
+      "technologies": [
+        "React.js",
+        "Express.js",
+        "JavaScript",
+        "Databases"
+      ]
     }
   ],
-
   "achievements": [
     {
-      "title": "GATE 2026 Qualified — AIR 3124",
-      "description": "Secured All India Rank 3124 with GATE Score 601 and 51.45 marks in CS. Improved from AIR 9860 (2025) to AIR 3124 (2026) — a 3x rank improvement.",
+      "title": "GATE 2026 Qualified \u2014 AIR 3124",
+      "description": "Secured All India Rank 3124 with GATE Score 601 and 51.45 marks in CS. Improved from AIR 9860 (2025) to AIR 3124 (2026) \u2014 a 3x rank improvement.",
       "date": "Feb 2026",
-      "icon": "trophy"
+      "icon": "trophy",
+      "link": "certificates/GATE_2026_ScoreCard.pdf",
+      "link_text": "View Scorecard"
     },
     {
-      "title": "GATE 2025 Qualified — AIR 9860",
+      "title": "GATE 2025 Qualified \u2014 AIR 9860",
       "description": "Secured AIR 9860 with GATE Score 453 in Computer Science",
       "date": "Feb 2025",
-      "icon": "trophy"
+      "icon": "trophy",
+      "link": "certificates/GATE_2025_ScoreCard.pdf",
+      "link_text": "View Scorecard"
     },
     {
       "title": "First Place in Technodium 25",
@@ -312,7 +426,6 @@
       "icon": "book"
     }
   ],
-
   "certifications": [
     {
       "name": "CCNA: Introduction to Networks",
@@ -385,7 +498,6 @@
       "icon": "assets/redhat-logo.png"
     }
   ],
-
   "stats": {
     "cgpa": "9.24",
     "projects": "7+",

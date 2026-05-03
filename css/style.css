@@ -1635,8 +1635,34 @@ button {
   line-height: 1.6;
 }
 
+.achievement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+
+.achievement-link:hover {
+  background: var(--primary);
+  color: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(58, 143, 133, 0.25);
+}
+
+.achievement-link i {
+  font-size: 0.9rem;
+}
+
 .achievement-date {
-  display: inline-block;
+  display: block;
   margin-top: 10px;
   font-size: 0.75rem;
   font-weight: 600;

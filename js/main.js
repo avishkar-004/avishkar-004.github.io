@@ -375,10 +375,15 @@ function populateAchievements() {
     var achievementsGrid = document.getElementById('achievements-grid');
     if (achievementsGrid) {
       achievementsGrid.innerHTML = achievements.map(function (ach) {
+        var linkHtml = ach.link
+          ? '<a href="' + ach.link + '" class="achievement-link" target="_blank" rel="noopener">' +
+            '<i class="fas fa-file-pdf"></i> ' + (ach.link_text || 'View Certificate') + '</a>'
+          : '';
         return '<div class="achievement-card">' +
           '<div class="achievement-icon"><i class="fas fa-' + ach.icon + '"></i></div>' +
           '<h3>' + ach.title + '</h3>' +
           '<p>' + ach.description + '</p>' +
+          linkHtml +
           '<span class="achievement-date">' + ach.date + '</span>' +
           '</div>';
       }).join('');

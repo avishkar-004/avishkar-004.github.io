@@ -395,13 +395,17 @@ var PORTFOLIO_DATA = {
       "title": "GATE 2026 Qualified \u2014 AIR 3124",
       "description": "Secured All India Rank 3124 with GATE Score 601 and 51.45 marks in CS. Improved from AIR 9860 (2025) to AIR 3124 (2026) \u2014 a 3x rank improvement.",
       "date": "Feb 2026",
-      "icon": "trophy"
+      "icon": "trophy",
+      "link": "certificates/GATE_2026_ScoreCard.pdf",
+      "link_text": "View Scorecard"
     },
     {
       "title": "GATE 2025 Qualified \u2014 AIR 9860",
       "description": "Secured AIR 9860 with GATE Score 453 in Computer Science",
       "date": "Feb 2025",
-      "icon": "trophy"
+      "icon": "trophy",
+      "link": "certificates/GATE_2025_ScoreCard.pdf",
+      "link_text": "View Scorecard"
     },
     {
       "title": "First Place in Technodium 25",
