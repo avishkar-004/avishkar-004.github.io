@@ -446,24 +446,6 @@ var PORTFOLIO_DATA = {
       "icon": "assets/cisco-logo.png"
     },
     {
-      "name": "Python Essentials 1",
-      "issuer": "Cisco",
-      "date": "May 2025",
-      "icon": "assets/cisco-logo.png"
-    },
-    {
-      "name": "Python Essentials 2",
-      "issuer": "Cisco",
-      "date": "May 2025",
-      "icon": "assets/cisco-logo.png"
-    },
-    {
-      "name": "Introduction to Cybersecurity",
-      "issuer": "Cisco",
-      "date": "May 2025",
-      "icon": "assets/cisco-logo.png"
-    },
-    {
       "name": "PCAP: Programming Essentials in Python",
       "issuer": "Python Institute",
       "icon": "assets/python-logo.png"
@@ -472,15 +454,6 @@ var PORTFOLIO_DATA = {
       "name": "Programming in Modern C++",
       "issuer": "NPTEL",
       "score": "55/100"
-    },
-    {
-      "name": "Programming, Data Structures and Algorithms using Python",
-      "issuer": "NPTEL",
-      "score": "69/100"
-    },
-    {
-      "name": "Cloud Computing",
-      "issuer": "NPTEL"
     },
     {
       "name": "Introduction to Machine Learning",
@@ -502,6 +475,6 @@ var PORTFOLIO_DATA = {
     "cgpa": "9.24",
     "projects": "7+",
     "technologies": "25+",
-    "certifications": "13+"
+    "certifications": "8+"
   }
 };
