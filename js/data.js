@@ -82,7 +82,7 @@ var PORTFOLIO_DATA = {
       "description": "Built a distributed key-value database from scratch in C++ with B+ Tree indexing, MVCC concurrency control, and Raft consensus algorithm.",
       "duration": "6 weeks",
       "status": "Complete (All 6 Phases)",
-      "github": null,
+      "github": "https://github.com/avishkar-004/minidb",
       "demo": null,
       "highlights": [
         "10,000+ concurrent transactions with <1ms latency",
@@ -122,7 +122,7 @@ var PORTFOLIO_DATA = {
       "description": "Architected a distributed message queue system similar to Apache Kafka with consumer groups, partition replication, and Spring Boot admin API.",
       "duration": "6 weeks",
       "status": "Complete (6/6 Phases)",
-      "github": null,
+      "github": "https://github.com/avishkar-004/streamflow",
       "demo": null,
       "highlights": [
         "Processing 50,000+ messages/sec with guaranteed ordering",
@@ -162,7 +162,7 @@ var PORTFOLIO_DATA = {
       "description": "Built a vector database implementing HNSW algorithm for approximate nearest neighbor search with OpenAI embeddings integration.",
       "duration": "4-6 weeks",
       "status": "Complete",
-      "github": null,
+      "github": "https://github.com/avishkar-004/vectorflow",
       "demo": null,
       "highlights": [
         "1,000,000+ vectors indexed with 95%+ recall",
