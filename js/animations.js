@@ -184,6 +184,13 @@ var InteractiveCLI = (function () {
       });
     }
 
+    // Backdrop click to close
+    self.overlay.addEventListener('click', function (e) {
+      if (e.target === self.overlay) {
+        self.close();
+      }
+    });
+
     // Enter to process command
     self.input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') {
@@ -226,13 +233,14 @@ var InteractiveCLI = (function () {
   };
 
   InteractiveCLI.prototype.open = function () {
-    this.overlay.style.display = 'flex';
+    this.overlay.classList.add('active');
     this.isOpen = true;
-    this.input.focus();
+    var self = this;
+    setTimeout(function () { self.input.focus(); }, 100);
   };
 
   InteractiveCLI.prototype.close = function () {
-    this.overlay.style.display = 'none';
+    this.overlay.classList.remove('active');
     this.isOpen = false;
   };
 
