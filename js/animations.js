@@ -18,7 +18,7 @@ var TerminalBoot = (function () {
       { text: '> event_streaming         [loaded] \u2713', color: '#7ECEC0' },
       { text: '> vector_database         [loaded] \u2713', color: '#7ECEC0' },
       { text: '> GATE 2026: AIR 3124 | Score: 601 \u2713', color: '#7ECEC0' },
-      { text: '> certifications: 13 loaded \u2713', color: '#7ECEC0' },
+      { text: '> certifications: 8 loaded \u2713', color: '#7ECEC0' },
       { text: '> system ready. launching portfolio...', color: '#7ECEC0' }
     ];
     this.currentLine = 0;
@@ -334,7 +334,7 @@ var InteractiveCLI = (function () {
       '  ' + this.highlight('gate') + '             GATE exam comparison (2025 vs 2026)',
       '  ' + this.highlight('experience') + '       Work history',
       '  ' + this.highlight('contact') + '          Contact information & links',
-      '  ' + this.highlight('certs') + '            List all 13 certifications',
+      '  ' + this.highlight('certs') + '            List certifications',
       '  ' + this.highlight('clear') + '            Clear terminal output',
       '  ' + this.highlight('theme dark|light') + ' Toggle theme',
       '  ' + this.highlight('whoami') + '           Who is this?',
@@ -546,7 +546,7 @@ var InteractiveCLI = (function () {
       '   ' + this.info('GATE:') + '      AIR 3124 (2026)',
       '   ' + this.info('CGPA:') + '      ' + (stats.cgpa || '9.24') + '/10',
       '   ' + this.info('Projects:') + '  ' + (stats.projects || '7+'),
-      '   ' + this.info('Certs:') + '     ' + (stats.certifications || '13+'),
+      '   ' + this.info('Certs:') + '     ' + (stats.certifications || '8+'),
       '   ' + this.info('Theme:') + '     ' + currentTheme,
       ''
     ];

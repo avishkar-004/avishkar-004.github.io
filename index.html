@@ -14,7 +14,7 @@
   <meta property="og:title" content="Avishkar Pawar — Systems & AI/ML Engineer">
   <meta property="og:description" content="Final-year Computer Engineering student building production-grade distributed systems, databases, and AI/ML infrastructure from scratch.">
   <meta property="og:image" content="assets/profile.png">
-  <meta property="og:url" content="https://avishkarpawar.dev">
+  <meta property="og:url" content="https://avishkar-004.github.io/avishkar-004/">
   <meta property="og:site_name" content="Avishkar Pawar Portfolio">
 
   <!-- Twitter Card -->
@@ -183,7 +183,7 @@
             </div>
             <div class="stat-card" data-tilt>
               <div class="stat-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div>
-              <span class="stat-number" id="stat-certs">13+</span>
+              <span class="stat-number" id="stat-certs">8+</span>
               <span class="stat-label">Certifications</span>
             </div>
           </div>
@@ -248,19 +248,15 @@
               <span class="dot red"></span>
               <span class="dot yellow"></span>
               <span class="dot green"></span>
-              <span class="code-filename">gate2026.ts</span>
+              <span class="code-filename">about.js</span>
             </div>
-            <pre class="code-content"><code><span class="kw">interface</span> <span class="var">GATEResult</span> {
-  <span class="key">year</span>: <span class="kw">number</span>;
-  <span class="key">air</span>: <span class="kw">number</span>;
-  <span class="key">score</span>: <span class="kw">number</span>;
-}
-
-<span class="kw">const</span> <span class="var">gate2026</span>: <span class="var">GATEResult</span> = {
-  <span class="key">year</span>: <span class="num">2026</span>,
-  <span class="key">air</span>: <span class="num">3124</span>,
-  <span class="key">score</span>: <span class="num">601</span>,
-  <span class="key">improvement</span>: <span class="str">"3x from 2025"</span>,
+            <pre class="code-content"><code><span class="kw">const</span> <span class="var">avishkar</span> = {
+  <span class="key">role</span>: <span class="str">"Systems Engineer"</span>,
+  <span class="key">languages</span>: [<span class="str">"C++"</span>, <span class="str">"Java"</span>, <span class="str">"Python"</span>],
+  <span class="key">gate</span>: { <span class="key">air</span>: <span class="num">3124</span>, <span class="key">score</span>: <span class="num">601</span> },
+  <span class="key">cgpa</span>: <span class="num">9.24</span>,
+  <span class="key">projects</span>: <span class="num">7</span>,
+  <span class="key">passion</span>: <span class="str">"Building from scratch"</span>,
 };</code></pre>
           </div>
 
@@ -395,195 +391,6 @@
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
-
-  <!-- Terminal Boot + CLI Script (inline for boot speed) -->
-  <script>
-  (function() {
-    // ===== BOOT ANIMATION =====
-    const bootOutput = document.getElementById('boot-output');
-    const bootOverlay = document.getElementById('terminal-boot');
-
-    const bootLines = [
-      { text: '> Initializing portfolio system...', delay: 0 },
-      { text: '> Loading modules: [core, ui, data]', delay: 300 },
-      { text: '  [OK] core.js loaded (42ms)', delay: 500 },
-      { text: '  [OK] ui.css compiled (18ms)', delay: 200 },
-      { text: '  [OK] data.json parsed (7 projects, 13 certs)', delay: 300 },
-      { text: '> Connecting to avishkar@portfolio...', delay: 400 },
-      { text: '> GATE 2026 Score: 601 | AIR: 3124', delay: 200 },
-      { text: '> CGPA: 9.24/10 | MIT Academy of Engineering', delay: 200 },
-      { text: '> Distributed Systems | AI/ML | Backend', delay: 200 },
-      { text: '> Build complete. Launching portfolio...', delay: 400 },
-      { text: '', delay: 200 },
-      { text: '  Welcome, visitor.', delay: 300 },
-    ];
-
-    let totalDelay = 0;
-    bootLines.forEach((line, i) => {
-      totalDelay += line.delay;
-      setTimeout(() => {
-        const lineEl = document.createElement('div');
-        lineEl.className = 'boot-line';
-        lineEl.textContent = line.text;
-        bootOutput.appendChild(lineEl);
-        bootOutput.scrollTop = bootOutput.scrollHeight;
-      }, totalDelay);
-    });
-
-    // Fade out boot overlay after all lines
-    setTimeout(() => {
-      bootOverlay.classList.add('boot-done');
-    }, totalDelay + 600);
-
-    // ===== CLI OVERLAY =====
-    const cliOverlay = document.getElementById('cli-overlay');
-    const cliInput = document.getElementById('cli-input');
-    const cliOutput = document.getElementById('cli-output');
-    const cliClose = document.getElementById('cli-close');
-    const terminalBtn = document.getElementById('terminal-btn');
-
-    function openCLI() {
-      cliOverlay.classList.add('active');
-      setTimeout(() => cliInput.focus(), 100);
-    }
-
-    function closeCLI() {
-      cliOverlay.classList.remove('active');
-    }
-
-    // Backtick key opens CLI
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '`' && !e.ctrlKey && !e.metaKey) {
-        const tag = document.activeElement.tagName.toLowerCase();
-        if (tag === 'input' || tag === 'textarea') return;
-        e.preventDefault();
-        if (cliOverlay.classList.contains('active')) {
-          closeCLI();
-        } else {
-          openCLI();
-        }
-      }
-      if (e.key === 'Escape' && cliOverlay.classList.contains('active')) {
-        closeCLI();
-      }
-    });
-
-    if (cliClose) cliClose.addEventListener('click', closeCLI);
-    if (terminalBtn) terminalBtn.addEventListener('click', openCLI);
-
-    // Close on backdrop click
-    cliOverlay.addEventListener('click', (e) => {
-      if (e.target === cliOverlay) closeCLI();
-    });
-
-    // CLI Commands
-    const commands = {
-      help: () => [
-        'Available commands:',
-        '  about      - Who am I',
-        '  skills     - Tech stack',
-        '  gate       - GATE exam results',
-        '  projects   - Project list',
-        '  contact    - Get in touch',
-        '  resume     - Download resume',
-        '  github     - Open GitHub profile',
-        '  clear      - Clear terminal',
-        '  exit       - Close terminal',
-      ],
-      about: () => [
-        'Avishkar Mahesh Pawar',
-        'Final-year B.Tech Computer Engineering @ MIT AOE, Pune',
-        'CGPA: 9.24/10 | GATE 2026 AIR 3124',
-        'Building production-grade distributed systems from scratch.',
-      ],
-      skills: () => [
-        'Languages:  C++, Java, Python, JavaScript, TypeScript, SQL',
-        'Frameworks: Spring Boot, FastAPI, React, Node.js, Vue.js',
-        'Databases:  PostgreSQL, MySQL, MongoDB, Redis',
-        'Tools:      Git, Docker, Linux, AWS, CMake, Maven',
-        'Concepts:   DSA, OS, DBMS, CN, Distributed Systems, DL, CV',
-      ],
-      gate: () => [
-        'GATE CS Results:',
-        '  2025  ->  AIR 9860  |  Score 453',
-        '  2026  ->  AIR 3124  |  Score 601',
-        '  Improvement: 3x rank jump',
-      ],
-      projects: () => [
-        '1. MiniDB        - Distributed Key-Value Database (C++)',
-        '2. StreamFlow     - Event Streaming Platform (Java)',
-        '3. VectorFlow     - AI-Powered Vector Database (Python)',
-        '4. Grocery Delivery - Real-time Quotation Platform (React)',
-        '5. KrushiDhan     - Smart Agriculture Platform (React)',
-        '6. Eye Disease    - Deep Learning Detection (Python)',
-        '7. Blood Connect  - Blood Bank System (TypeScript)',
-      ],
-      contact: () => [
-        'Email:    avishkarpawar004@gmail.com',
-        'Phone:    +91-8623005430',
-        'LinkedIn: linkedin.com/in/avishkarpawar',
-        'GitHub:   github.com/avishkar-004',
-        'Location: Pune, Maharashtra, India',
-      ],
-      resume: () => {
-        window.open('resumes/Avishkar_Pawar_SDE_Resume.pdf', '_blank');
-        return ['Opening resume in new tab...'];
-      },
-      github: () => {
-        window.open('https://github.com/avishkar-004', '_blank');
-        return ['Opening GitHub profile...'];
-      },
-      clear: () => {
-        cliOutput.innerHTML = '';
-        return [];
-      },
-      exit: () => {
-        closeCLI();
-        return ['Goodbye.'];
-      },
-    };
-
-    if (cliInput) {
-      cliInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          const value = cliInput.value.trim().toLowerCase();
-          cliInput.value = '';
-
-          // Echo the command
-          const echoLine = document.createElement('div');
-          echoLine.className = 'cli-line cli-echo';
-          echoLine.innerHTML = '<span class="cli-prompt-echo">visitor@portfolio:~$</span> ' + value;
-          cliOutput.appendChild(echoLine);
-
-          if (value === '') {
-            // do nothing
-          } else if (commands[value]) {
-            const result = commands[value]();
-            result.forEach(line => {
-              const el = document.createElement('div');
-              el.className = 'cli-line';
-              el.textContent = line;
-              cliOutput.appendChild(el);
-            });
-          } else {
-            const el = document.createElement('div');
-            el.className = 'cli-line cli-error';
-            el.textContent = `Command not found: ${value}. Type "help" for commands.`;
-            cliOutput.appendChild(el);
-          }
-
-          // Add spacing
-          const spacer = document.createElement('div');
-          spacer.className = 'cli-line';
-          spacer.innerHTML = '&nbsp;';
-          cliOutput.appendChild(spacer);
-
-          cliOutput.scrollTop = cliOutput.scrollHeight;
-        }
-      });
-    }
-  })();
-  </script>
 
 </body>
 </html>
