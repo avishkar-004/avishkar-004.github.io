@@ -1,0 +1,44 @@
+Images Needed for Portfolio
+=============================
+
+Please add the following images to this folder:
+
+1. profile.jpg
+   - Your professional headshot/photo
+   - Recommended size: 500x500px
+   - Format: JPG or PNG
+   - Should be circular or square (CSS will make it circular)
+
+2. favicon.ico
+   - Website icon (shows in browser tab)
+   - Size: 32x32px or 64x64px
+   - Format: ICO or PNG
+
+3. Project Thumbnails (Optional but recommended):
+   - minidb-thumb.jpg (800x450px)
+   - minidb-banner.jpg (1200x600px)
+   - streamflow-thumb.jpg (800x450px)
+   - streamflow-banner.jpg (1200x600px)
+   - vectorflow-thumb.jpg (800x450px)
+   - vectorflow-banner.jpg (1200x600px)
+   - grocery-thumb.jpg (800x450px)
+   - grocery-banner.jpg (1200x600px)
+   - agriculture-thumb.jpg (800x450px)
+   - agriculture-banner.jpg (1200x600px)
+
+4. Company Logos (Optional):
+   - osmos-logo.png
+   - core-decimal-logo.png
+   - campus-credential-logo.png
+   - mit-logo.png
+
+5. Certification Icons (Optional):
+   - cisco-logo.png
+   - python-logo.png
+
+NOTE: If you don't have some images, the website will:
+- Use placeholder gradient backgrounds for projects
+- Use first letter of company name for logos
+- Still work perfectly fine!
+
+You can always add images later and they'll appear automatically.

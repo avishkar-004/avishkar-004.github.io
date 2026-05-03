@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Avishkar Pawar — Systems Engineer specializing in Distributed Systems, Database Internals, and AI/ML. GATE 2026 qualified with AIR 3124. Building production-grade systems from scratch.">
+  <meta name="keywords" content="Avishkar Pawar, Distributed Systems, Database Internals, AI/ML, C++, Java, Python, Software Engineer, Backend Engineer, GATE 2026">
+  <meta name="author" content="Avishkar Pawar">
+  <meta name="theme-color" content="#3A8F85">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Avishkar Pawar — Systems & AI/ML Engineer">
+  <meta property="og:description" content="Final-year Computer Engineering student building production-grade distributed systems, databases, and AI/ML infrastructure from scratch.">
+  <meta property="og:image" content="assets/profile.png">
+  <meta property="og:url" content="https://avishkarpawar.dev">
+  <meta property="og:site_name" content="Avishkar Pawar Portfolio">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Avishkar Pawar — Systems & AI/ML Engineer">
+  <meta name="twitter:description" content="Building production-grade distributed systems, databases, and AI/ML infrastructure from scratch.">
+  <meta name="twitter:image" content="assets/profile.png">
+
+  <title>Avishkar Pawar | Systems & AI/ML Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- Preconnect hints for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.4 — local copy (works on file://) with CDN fallback -->
+  <link rel="stylesheet" href="css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       TERMINAL BOOT ANIMATION OVERLAY
+  ============================================= -->
+  <div class="terminal-boot" id="terminal-boot">
+    <div class="terminal-window boot-window">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">avishkar@portfolio ~ init</span>
+      </div>
+      <div class="terminal-body" id="boot-output"></div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       CLI OVERLAY (hidden, toggled with backtick)
+  ============================================= -->
+  <div class="cli-overlay" id="cli-overlay">
+    <div class="terminal-window cli-window">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">avishkar@portfolio ~ cli</span>
+        <button class="cli-close-btn" id="cli-close" aria-label="Close terminal">&times;</button>
+      </div>
+      <div class="terminal-body cli-body">
+        <div class="cli-output" id="cli-output">
+          <div class="cli-line">Welcome to Avishkar's interactive portfolio CLI.</div>
+          <div class="cli-line">Type <span class="cli-cmd">help</span> for available commands.</div>
+          <div class="cli-line">&nbsp;</div>
+        </div>
+        <div class="cli-input-line">
+          <span class="cli-prompt">visitor@portfolio:~$</span>
+          <input type="text" class="cli-input" id="cli-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#home" class="logo" aria-label="Avishkar Pawar — Home">AP<span class="logo-accent">.</span></a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="terminal-btn" id="terminal-btn" aria-label="Open terminal">
+          <i class="fas fa-terminal"></i>
+        </button>
+        <a href="resumes/Avishkar_Pawar_SDE_Resume.pdf" class="btn-nav" download aria-label="Download resume">
+          Resume <i class="fas fa-arrow-down"></i>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- ============================================
+         HERO — Split layout with gradient orbs
+    ============================================= -->
+    <section class="hero" id="home">
+      <!-- Animated gradient orbs -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Available for Opportunities
+          </span>
+
+          <h1 class="hero-title">
+            <span class="line">Hi, I'm</span>
+            <span class="line gradient-text" id="name">Avishkar Pawar</span>
+          </h1>
+
+          <div class="hero-roles" aria-live="polite">
+            <span id="typing-text"></span><span class="cursor-blink" aria-hidden="true">|</span>
+          </div>
+
+          <p class="hero-desc" id="bio"></p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contact" class="btn btn-outline">Get in Touch <i class="fas fa-envelope" aria-hidden="true"></i></a>
+          </div>
+
+          <div class="hero-social" id="social-links">
+            <!-- JS populates social links from data.js -->
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Stat cards in a staggered 2x2 grid -->
+          <div class="stat-grid">
+            <div class="stat-card stat-highlight" data-tilt>
+              <div class="stat-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
+              <span class="stat-number">AIR 3124</span>
+              <span class="stat-label">GATE 2026</span>
+            </div>
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+              <span class="stat-number" id="stat-cgpa">9.24</span>
+              <span class="stat-label">CGPA</span>
+            </div>
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
+              <span class="stat-number" id="stat-projects">7+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon" aria-hidden="true"><i class="fas fa-certificate"></i></div>
+              <span class="stat-number" id="stat-certs">13+</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT — Bento Grid Layout
+    ============================================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / About</span>
+          <h2 class="section-title">Get to know me</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bio card (spans 2 columns) -->
+          <div class="bento-card bento-lg" id="about-bio-card">
+            <h3>About Me</h3>
+            <p id="about-bio"><!-- JS fills from data.js --></p>
+          </div>
+
+          <!-- Education card -->
+          <div class="bento-card" id="education-card">
+            <div class="bento-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+            <div id="education-details">
+              <!-- JS fills from data.js -->
+            </div>
+          </div>
+
+          <!-- GATE Journey Comparison card -->
+          <div class="bento-card bento-gate" id="gate-card">
+            <h3>GATE Journey</h3>
+            <div class="gate-comparison">
+              <div class="gate-year gate-prev">
+                <span class="gate-year-label">2025</span>
+                <span class="gate-rank">AIR 9860</span>
+                <span class="gate-score">Score: 453</span>
+              </div>
+              <div class="gate-arrow" aria-hidden="true">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <div class="gate-year gate-current">
+                <span class="gate-year-label">2026</span>
+                <span class="gate-rank">AIR 3124</span>
+                <span class="gate-score">Score: 601</span>
+              </div>
+            </div>
+            <p class="gate-improvement">3x rank improvement</p>
+          </div>
+
+          <!-- Code snippet card -->
+          <div class="bento-card bento-code" aria-label="Code snippet showcasing GATE 2026 data">
+            <div class="code-header" aria-hidden="true">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-filename">gate2026.ts</span>
+            </div>
+            <pre class="code-content"><code><span class="kw">interface</span> <span class="var">GATEResult</span> {
+  <span class="key">year</span>: <span class="kw">number</span>;
+  <span class="key">air</span>: <span class="kw">number</span>;
+  <span class="key">score</span>: <span class="kw">number</span>;
+}
+
+<span class="kw">const</span> <span class="var">gate2026</span>: <span class="var">GATEResult</span> = {
+  <span class="key">year</span>: <span class="num">2026</span>,
+  <span class="key">air</span>: <span class="num">3124</span>,
+  <span class="key">score</span>: <span class="num">601</span>,
+  <span class="key">improvement</span>: <span class="str">"3x from 2025"</span>,
+};</code></pre>
+          </div>
+
+          <!-- Skills card (full width) -->
+          <div class="bento-card bento-full" id="skills-card">
+            <h3>Tech Stack</h3>
+            <div id="skills-grid">
+              <!-- JS fills with pill-shaped skill tags grouped by category -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PROJECTS — Featured projects with filter
+    ============================================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 / Work</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="project-filters" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="distributed-systems" role="tab" aria-selected="false">Systems</button>
+          <button class="filter-btn" data-filter="ai-ml" role="tab" aria-selected="false">AI / ML</button>
+          <button class="filter-btn" data-filter="full-stack" role="tab" aria-selected="false">Full Stack</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid" role="tabpanel">
+          <!-- JS creates project cards from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         EXPERIENCE — Timeline
+    ============================================= -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 / Journey</span>
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <!-- JS fills from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ACHIEVEMENTS & CERTIFICATIONS
+    ============================================= -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 / Recognition</span>
+          <h2 class="section-title">Achievements & Certifications</h2>
+        </div>
+
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- JS fills from data.js -->
+        </div>
+
+        <h3 class="subsection-title">Certifications</h3>
+
+        <div class="certs-grid" id="certifications-slider">
+          <!-- JS fills from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT — Centered, bold
+    ============================================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05 / Connect</span>
+          <h2 class="section-title">Let's Work Together</h2>
+        </div>
+
+        <div class="contact-center">
+          <p class="contact-desc">I'm currently looking for opportunities in distributed systems, backend engineering, and AI/ML infrastructure.</p>
+
+          <div class="contact-buttons">
+            <a href="mailto:avishkarpawar004@gmail.com" class="btn btn-primary btn-lg">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/avishkarpawar" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+              <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="https://github.com/avishkar-004" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+              <i class="fab fa-github" aria-hidden="true"></i> GitHub
+            </a>
+          </div>
+
+          <div class="contact-info-row">
+            <div class="contact-chip">
+              <i class="fas fa-envelope" aria-hidden="true"></i> avishkarpawar004@gmail.com
+            </div>
+            <div class="contact-chip">
+              <i class="fas fa-phone" aria-hidden="true"></i> +91-8623005430
+            </div>
+            <div class="contact-chip">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Pune, India
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2026 Avishkar Pawar</p>
+      <p>Press <kbd>`</kbd> for terminal mode</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+  <!-- Terminal Boot + CLI Script (inline for boot speed) -->
+  <script>
+  (function() {
+    // ===== BOOT ANIMATION =====
+    const bootOutput = document.getElementById('boot-output');
+    const bootOverlay = document.getElementById('terminal-boot');
+
+    const bootLines = [
+      { text: '> Initializing portfolio system...', delay: 0 },
+      { text: '> Loading modules: [core, ui, data]', delay: 300 },
+      { text: '  [OK] core.js loaded (42ms)', delay: 500 },
+      { text: '  [OK] ui.css compiled (18ms)', delay: 200 },
+      { text: '  [OK] data.json parsed (7 projects, 13 certs)', delay: 300 },
+      { text: '> Connecting to avishkar@portfolio...', delay: 400 },
+      { text: '> GATE 2026 Score: 601 | AIR: 3124', delay: 200 },
+      { text: '> CGPA: 9.24/10 | MIT Academy of Engineering', delay: 200 },
+      { text: '> Distributed Systems | AI/ML | Backend', delay: 200 },
+      { text: '> Build complete. Launching portfolio...', delay: 400 },
+      { text: '', delay: 200 },
+      { text: '  Welcome, visitor.', delay: 300 },
+    ];
+
+    let totalDelay = 0;
+    bootLines.forEach((line, i) => {
+      totalDelay += line.delay;
+      setTimeout(() => {
+        const lineEl = document.createElement('div');
+        lineEl.className = 'boot-line';
+        lineEl.textContent = line.text;
+        bootOutput.appendChild(lineEl);
+        bootOutput.scrollTop = bootOutput.scrollHeight;
+      }, totalDelay);
+    });
+
+    // Fade out boot overlay after all lines
+    setTimeout(() => {
+      bootOverlay.classList.add('boot-done');
+    }, totalDelay + 600);
+
+    // ===== CLI OVERLAY =====
+    const cliOverlay = document.getElementById('cli-overlay');
+    const cliInput = document.getElementById('cli-input');
+    const cliOutput = document.getElementById('cli-output');
+    const cliClose = document.getElementById('cli-close');
+    const terminalBtn = document.getElementById('terminal-btn');
+
+    function openCLI() {
+      cliOverlay.classList.add('active');
+      setTimeout(() => cliInput.focus(), 100);
+    }
+
+    function closeCLI() {
+      cliOverlay.classList.remove('active');
+    }
+
+    // Backtick key opens CLI
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '`' && !e.ctrlKey && !e.metaKey) {
+        const tag = document.activeElement.tagName.toLowerCase();
+        if (tag === 'input' || tag === 'textarea') return;
+        e.preventDefault();
+        if (cliOverlay.classList.contains('active')) {
+          closeCLI();
+        } else {
+          openCLI();
+        }
+      }
+      if (e.key === 'Escape' && cliOverlay.classList.contains('active')) {
+        closeCLI();
+      }
+    });
+
+    if (cliClose) cliClose.addEventListener('click', closeCLI);
+    if (terminalBtn) terminalBtn.addEventListener('click', openCLI);
+
+    // Close on backdrop click
+    cliOverlay.addEventListener('click', (e) => {
+      if (e.target === cliOverlay) closeCLI();
+    });
+
+    // CLI Commands
+    const commands = {
+      help: () => [
+        'Available commands:',
+        '  about      - Who am I',
+        '  skills     - Tech stack',
+        '  gate       - GATE exam results',
+        '  projects   - Project list',
+        '  contact    - Get in touch',
+        '  resume     - Download resume',
+        '  github     - Open GitHub profile',
+        '  clear      - Clear terminal',
+        '  exit       - Close terminal',
+      ],
+      about: () => [
+        'Avishkar Mahesh Pawar',
+        'Final-year B.Tech Computer Engineering @ MIT AOE, Pune',
+        'CGPA: 9.24/10 | GATE 2026 AIR 3124',
+        'Building production-grade distributed systems from scratch.',
+      ],
+      skills: () => [
+        'Languages:  C++, Java, Python, JavaScript, TypeScript, SQL',
+        'Frameworks: Spring Boot, FastAPI, React, Node.js, Vue.js',
+        'Databases:  PostgreSQL, MySQL, MongoDB, Redis',
+        'Tools:      Git, Docker, Linux, AWS, CMake, Maven',
+        'Concepts:   DSA, OS, DBMS, CN, Distributed Systems, DL, CV',
+      ],
+      gate: () => [
+        'GATE CS Results:',
+        '  2025  ->  AIR 9860  |  Score 453',
+        '  2026  ->  AIR 3124  |  Score 601',
+        '  Improvement: 3x rank jump',
+      ],
+      projects: () => [
+        '1. MiniDB        - Distributed Key-Value Database (C++)',
+        '2. StreamFlow     - Event Streaming Platform (Java)',
+        '3. VectorFlow     - AI-Powered Vector Database (Python)',
+        '4. Grocery Delivery - Real-time Quotation Platform (React)',
+        '5. KrushiDhan     - Smart Agriculture Platform (React)',
+        '6. Eye Disease    - Deep Learning Detection (Python)',
+        '7. Blood Connect  - Blood Bank System (TypeScript)',
+      ],
+      contact: () => [
+        'Email:    avishkarpawar004@gmail.com',
+        'Phone:    +91-8623005430',
+        'LinkedIn: linkedin.com/in/avishkarpawar',
+        'GitHub:   github.com/avishkar-004',
+        'Location: Pune, Maharashtra, India',
+      ],
+      resume: () => {
+        window.open('resumes/Avishkar_Pawar_SDE_Resume.pdf', '_blank');
+        return ['Opening resume in new tab...'];
+      },
+      github: () => {
+        window.open('https://github.com/avishkar-004', '_blank');
+        return ['Opening GitHub profile...'];
+      },
+      clear: () => {
+        cliOutput.innerHTML = '';
+        return [];
+      },
+      exit: () => {
+        closeCLI();
+        return ['Goodbye.'];
+      },
+    };
+
+    if (cliInput) {
+      cliInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const value = cliInput.value.trim().toLowerCase();
+          cliInput.value = '';
+
+          // Echo the command
+          const echoLine = document.createElement('div');
+          echoLine.className = 'cli-line cli-echo';
+          echoLine.innerHTML = '<span class="cli-prompt-echo">visitor@portfolio:~$</span> ' + value;
+          cliOutput.appendChild(echoLine);
+
+          if (value === '') {
+            // do nothing
+          } else if (commands[value]) {
+            const result = commands[value]();
+            result.forEach(line => {
+              const el = document.createElement('div');
+              el.className = 'cli-line';
+              el.textContent = line;
+              cliOutput.appendChild(el);
+            });
+          } else {
+            const el = document.createElement('div');
+            el.className = 'cli-line cli-error';
+            el.textContent = `Command not found: ${value}. Type "help" for commands.`;
+            cliOutput.appendChild(el);
+          }
+
+          // Add spacing
+          const spacer = document.createElement('div');
+          spacer.className = 'cli-line';
+          spacer.innerHTML = '&nbsp;';
+          cliOutput.appendChild(spacer);
+
+          cliOutput.scrollTop = cliOutput.scrollHeight;
+        }
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
