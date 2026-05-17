@@ -13,7 +13,7 @@ var PORTFOLIO_DATA = {
       "github": "https://github.com/avishkar-004",
       "linkedin": "https://www.linkedin.com/in/avishkarpawar",
       "portfolio": "https://avishkar.digital",
-      "credly": "https://www.credly.com/users/avishkar-pawar"
+      "credly": "https://www.credly.com/users/avishkar-pawar.3cf03fe8"
     }
   },
   "education": {
@@ -485,36 +485,45 @@ var PORTFOLIO_DATA = {
   ],
   "certifications": [
     {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "AWS",
+      "date": "May 2026",
+      "icon": "assets/awsCloudPractitioner.png"
+    },
+    {
       "name": "CCNA: Introduction to Networks",
       "issuer": "Cisco",
       "date": "Sep 2024",
-      "icon": "assets/cisco-logo.png"
+      "icon": "assets/ccnaCisco.png"
     },
     {
       "name": "CCNA: Switching, Routing, and Wireless Essentials",
       "issuer": "Cisco",
       "date": "Nov 2024",
-      "icon": "assets/cisco-logo.png"
+      "icon": "assets/ccnaCisco.png"
     },
     {
       "name": "CCNA: Enterprise Networking, Security, and Automation",
       "issuer": "Cisco",
       "date": "Nov 2024",
-      "icon": "assets/cisco-logo.png"
+      "icon": "assets/ccnaCisco.png"
     },
-    {
-      "name": "PCAP: Programming Essentials in Python",
-      "issuer": "Python Institute",
-      "icon": "assets/python-logo.png"
-    },
+    // 
+    // {
+    //   "name": "PCAP: Programming Essentials in Python",
+    //   "issuer": "Python Institute",
+    //   "icon": "assets/python-logo.png"
+    // },
     {
       "name": "Programming in Modern C++",
       "issuer": "NPTEL",
-      "score": "55/100"
+      "score": "55/100",
+      "icon": "assets/nptelLogo.png"
     },
     {
       "name": "Introduction to Machine Learning",
-      "issuer": "NPTEL"
+      "issuer": "NPTEL",
+      "icon": "assets/nptelLogo.png"
     },
     {
       "name": "CS260: Introduction to Cryptography and Network Security",
@@ -525,7 +534,7 @@ var PORTFOLIO_DATA = {
       "name": "Red Hat Academy Program",
       "issuer": "Red Hat",
       "date": "2024",
-      "icon": "assets/redhat-logo.png"
+      "icon": "assets/redhatLogo.png"
     }
   ],
   "stats": {
