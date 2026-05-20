@@ -251,6 +251,9 @@ button {
   min-height: 280px;
   max-height: 50vh;
   overflow-y: auto;
+  /* Preserve the \n text nodes that the boot script appends after each line.
+     Without this every line collapses onto one row in the rendered output. */
+  white-space: pre-wrap;
 }
 
 .boot-line {
