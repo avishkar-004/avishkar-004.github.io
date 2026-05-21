@@ -12,7 +12,7 @@ var PORTFOLIO_DATA = {
     "social": {
       "github": "https://github.com/avishkar-004",
       "linkedin": "https://www.linkedin.com/in/avishkarpawar",
-      "portfolio": "https://avishkar.digital",
+      "portfolio": "https://avishkar-004.github.io",
       "credly": "https://www.credly.com/users/avishkar-pawar.3cf03fe8"
     }
   },
