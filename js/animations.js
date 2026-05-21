@@ -4,11 +4,15 @@
    ================================================================ */
 
 // ===== 1. TERMINAL BOOT CLASS =====
-// We show the full ~15s boot animation ONLY on a visitor's first session.
-// Subsequent visits skip straight to the portfolio (the marker is stored in
-// localStorage). Anyone \u2014 first-timer or returning \u2014 can also press Escape /
-// Space / Enter, or click the boot screen, to skip immediately.
-var BOOT_STORAGE_KEY = 'avishkar_boot_seen_v1';
+// We show the full ~15s boot animation when a visitor hasn't seen it in the
+// last 30 days. Returning-soon visitors (recruiter who reopens next morning,
+// power user who reloads, etc.) skip straight to the portfolio. After 30
+// days the timestamp is considered stale and the boot plays again \u2014 fresh
+// content for someone returning after a long gap.
+// Anyone can also press Escape / Space / Enter or click to skip immediately.
+var BOOT_STORAGE_KEY = 'avishkar_boot_seen_at_v2';
+var BOOT_TTL_DAYS = 30;
+var BOOT_TTL_MS = BOOT_TTL_DAYS * 24 * 60 * 60 * 1000;
 
 var TerminalBoot = (function () {
   function TerminalBoot() {
@@ -16,13 +20,16 @@ var TerminalBoot = (function () {
     this.container = document.getElementById('terminal-boot');
     if (!this.output || !this.container) return;
 
-    // Returning visitor \u2014 skip the show entirely.
-    var seen = false;
-    try { seen = window.localStorage.getItem(BOOT_STORAGE_KEY) === '1'; }
-    catch (e) { /* localStorage blocked (private mode, etc.) \u2014 fall through to play */ }
-    if (seen) {
-      this.container.classList.add('boot-done');
-      return;
+    // Returning visitor within TTL \u2014 skip the show entirely.
+    try {
+      var raw = window.localStorage.getItem(BOOT_STORAGE_KEY);
+      var lastSeen = raw ? parseInt(raw, 10) : 0;
+      if (lastSeen && (Date.now() - lastSeen) < BOOT_TTL_MS) {
+        this.container.classList.add('boot-done');
+        return;
+      }
+    } catch (e) {
+      /* localStorage blocked (private mode, etc.) \u2014 fall through to play */
     }
 
     this.charDelay = 25;
@@ -59,7 +66,7 @@ var TerminalBoot = (function () {
   TerminalBoot.prototype.skip = function () {
     if (this.skipped) return;
     this.skipped = true;
-    try { window.localStorage.setItem(BOOT_STORAGE_KEY, '1'); } catch (e) {}
+    try { window.localStorage.setItem(BOOT_STORAGE_KEY, String(Date.now())); } catch (e) {}
     this.container.classList.add('boot-done');
     if (this._skipHandler) {
       document.removeEventListener('keydown', this._skipHandler);
@@ -78,7 +85,7 @@ var TerminalBoot = (function () {
       // All lines done — wait 500ms then add boot-done class and mark this
       // visitor as having seen the boot so future page loads skip it.
       setTimeout(function () {
-        try { window.localStorage.setItem(BOOT_STORAGE_KEY, '1'); } catch (e) {}
+        try { window.localStorage.setItem(BOOT_STORAGE_KEY, String(Date.now())); } catch (e) {}
         self.container.classList.add('boot-done');
       }, 500);
       return;
