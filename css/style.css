@@ -340,6 +340,19 @@ button {
   word-break: break-word;
 }
 
+/* CLI command output is emitted as <pre> blocks. Browsers default <pre>
+   to white-space: pre (no wrapping), which makes long lines overflow the
+   terminal box and force horizontal scroll. Force-wrap them instead. */
+.cli-output pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
 .cli-cmd {
   color: #E8B86D;
   font-weight: 600;
