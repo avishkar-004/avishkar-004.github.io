@@ -4,12 +4,29 @@
    ================================================================ */
 
 // ===== 1. TERMINAL BOOT CLASS =====
+// We show the full ~15s boot animation ONLY on a visitor's first session.
+// Subsequent visits skip straight to the portfolio (the marker is stored in
+// localStorage). Anyone \u2014 first-timer or returning \u2014 can also press Escape /
+// Space / Enter, or click the boot screen, to skip immediately.
+var BOOT_STORAGE_KEY = 'avishkar_boot_seen_v1';
+
 var TerminalBoot = (function () {
   function TerminalBoot() {
     this.output = document.getElementById('boot-output');
     this.container = document.getElementById('terminal-boot');
     if (!this.output || !this.container) return;
+
+    // Returning visitor \u2014 skip the show entirely.
+    var seen = false;
+    try { seen = window.localStorage.getItem(BOOT_STORAGE_KEY) === '1'; }
+    catch (e) { /* localStorage blocked (private mode, etc.) \u2014 fall through to play */ }
+    if (seen) {
+      this.container.classList.add('boot-done');
+      return;
+    }
+
     this.charDelay = 25;
+    this.skipped = false;
     this.lines = [
       { text: '> initializing avishkar.system v2.0...', color: '#7ECEC0' },
       { text: '> loading modules...', color: '#7ECEC0' },
@@ -22,8 +39,33 @@ var TerminalBoot = (function () {
       { text: '> system ready. launching portfolio...', color: '#7ECEC0' }
     ];
     this.currentLine = 0;
+    this.bindSkipHandlers();
     this.start();
   }
+
+  TerminalBoot.prototype.bindSkipHandlers = function () {
+    var self = this;
+    function handler(e) {
+      if (self.skipped) return;
+      if (e.type === 'keydown' && e.key !== 'Escape' && e.key !== ' ' && e.key !== 'Enter') return;
+      self.skip();
+      e.preventDefault();
+    }
+    document.addEventListener('keydown', handler);
+    this.container.addEventListener('click', handler);
+    this._skipHandler = handler;
+  };
+
+  TerminalBoot.prototype.skip = function () {
+    if (this.skipped) return;
+    this.skipped = true;
+    try { window.localStorage.setItem(BOOT_STORAGE_KEY, '1'); } catch (e) {}
+    this.container.classList.add('boot-done');
+    if (this._skipHandler) {
+      document.removeEventListener('keydown', this._skipHandler);
+      this.container.removeEventListener('click', this._skipHandler);
+    }
+  };
 
   TerminalBoot.prototype.start = function () {
     this.typeLine();
@@ -31,9 +73,12 @@ var TerminalBoot = (function () {
 
   TerminalBoot.prototype.typeLine = function () {
     var self = this;
+    if (self.skipped) return;   // user already skipped — drop out of the typing loop
     if (self.currentLine >= self.lines.length) {
-      // All lines done — wait 500ms then add boot-done class
+      // All lines done — wait 500ms then add boot-done class and mark this
+      // visitor as having seen the boot so future page loads skip it.
       setTimeout(function () {
+        try { window.localStorage.setItem(BOOT_STORAGE_KEY, '1'); } catch (e) {}
         self.container.classList.add('boot-done');
       }, 500);
       return;
