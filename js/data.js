@@ -3,7 +3,7 @@ var PORTFOLIO_DATA = {
     "name": "Avishkar Mahesh Pawar",
     "title": "Computer Engineering Student | Systems & AI/ML Engineer",
     "tagline": "Building production-grade distributed systems from scratch",
-    "bio": "Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. Built 3 production-grade distributed systems from scratch \u2014 a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) \u2014 a 3x rank improvement from GATE 2025. Currently working as a Software Developer at OSMOS.",
+    "bio": "Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. Built 3 production-grade distributed systems from scratch \u2014 a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) \u2014 a 3x rank improvement from GATE 2025. Previously worked as a SDE intern at OSMOS.",
     "image": "assets/profile.png",
     "resume": "resumes/Avishkar_Pawar_SDE_Resume.pdf",
     "email": "avishkarpawar004@gmail.com",
