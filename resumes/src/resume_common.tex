@@ -1,0 +1,200 @@
+% Resume source adapted from the root resumeTemplate.txt layout.
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[top=0.42in,bottom=0.42in,left=0.48in,right=0.48in]{geometry}
+\usepackage{url}
+\usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[unicode,draft=false]{hyperref}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1.04}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+\definecolor{linkcolour}{rgb}{0,0.2,0.55}
+\definecolor{headingcolour}{rgb}{0.08,0.08,0.08}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+\titleformat{\section}
+  {\large\bfseries\scshape\raggedright\color{headingcolour}}
+  {}{0em}{}[\vspace{-3pt}\titlerule]
+\titlespacing{\section}{0pt}{6pt}{4pt}
+
+\setlist[itemize]{nosep,leftmargin=1.08em,itemsep=1.6pt,topsep=1.5pt,label=--}
+
+\newcommand{\resumeHeader}[2]{
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #2 \\
+  \end{tabularx}
+  \vspace{-3pt}
+}
+
+\newenvironment{joblong}[2]
+  {
+    \resumeHeader{#1}{#2}
+    \begin{itemize}
+  }
+  {
+    \end{itemize}
+    \vspace{2pt}
+  }
+
+\newcommand{\project}[4]{
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} \textbar{} \textit{#2} & \href{#3}{GitHub} \\
+  \end{tabularx}
+  \vspace{-5pt}
+  \begin{itemize}
+    \item #4
+  \end{itemize}
+  \vspace{1pt}
+}
+
+\providecommand{\ResumeTitle}{Software Developer}
+\providecommand{\ResumeSummary}{Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. GATE 2026 qualified with AIR 3124. Built production-grade projects from scratch across distributed systems, database internals, backend services, AI/ML infrastructure, and full-stack applications. Completed Software Developer internships at OSMOS and Core-Decimal Solutions.}
+\providecommand{\ResumeFocusSkills}{Backend Engineering, Distributed Systems, Database Internals, AI/ML Infrastructure}
+\providecommand{\ResumeProjects}{\ProjectMiniDB\ProjectStreamFlow\ProjectVectorFlow\ProjectJobSearch}
+
+\newcommand{\ProjectMiniDB}{
+\project
+  {MiniDB - Distributed Key-Value Database}
+  {C++17, Boost.Asio, Protocol Buffers, CMake}
+  {https://github.com/avishkar-004/minidb}
+  {Built B+ Tree indexing, MVCC transactions, Raft consensus, SQL-like query processing, sharding, TCP networking, and HTTP monitoring for 10,000+ operations/sec with sub-millisecond local latency.}
+}
+
+\newcommand{\ProjectStreamFlow}{
+\project
+  {StreamFlow - Kafka-like Event Streaming Platform}
+  {Java 17, Spring Boot, Netty, Docker}
+  {https://github.com/avishkar-004/streamflow}
+  {Implemented partitions, leader-follower replication, ISR tracking, consumer groups, log-based storage, zero-copy transfer, admin APIs, and monitoring hooks for high-throughput messaging.}
+}
+
+\newcommand{\ProjectVectorFlow}{
+\project
+  {VectorFlow - AI Vector Database}
+  {Python, FastAPI, NumPy, Numba, LangChain}
+  {https://github.com/avishkar-004/vectorflow}
+  {Built HNSW nearest-neighbor search, WAL persistence, distributed sharding, REST APIs, optimized distance computation, and RAG pipeline integration for semantic search.}
+}
+
+\newcommand{\ProjectJobSearch}{
+\project
+  {Job Search Copilot}
+  {Python, Groq AI, automation}
+  {https://github.com/avishkar-004/job-search-copilot}
+  {Built a read-only assistant that searches job platforms, scores role fit with Groq AI, and writes ranked daily reports without auto-applying.}
+}
+
+\newcommand{\ProjectKrushiDhan}{
+\project
+  {KrushiDhan - Smart Agriculture Platform}
+  {React, Node.js, Express.js, MongoDB}
+  {https://github.com/avishkar-004/KrushiDhan}
+  {Built a farmer-focused platform with market data, weather forecasting, AI-powered scheme recommendations, crop disease support, and equipment rental workflows.}
+}
+
+\newcommand{\ProjectPlayerReID}{
+\project
+  {Player Re-Identification in Sports Footage}
+  {Python, computer vision, deep learning}
+  {https://github.com/avishkar-004/Player-Re-Identification-in-Sports-Footage-}
+  {Built a system for re-identifying players across camera angles in sports footage using visual features and tracking-oriented matching.}
+}
+
+\newcommand{\ProjectEyeDisease}{
+\project
+  {Eye Disease Detection Using Deep Learning}
+  {Python, TensorFlow, Flask, OpenCV}
+  {https://github.com/avishkar-004/Eye-Disease-Detection-Using-Deep-Learning}
+  {Developed a CNN-based retinal image classification workflow for detecting eye disease categories and serving predictions through a web interface.}
+}
+
+\newcommand{\ProjectFlashCommerce}{
+\project
+  {Flash Commerce UI}
+  {TypeScript, React}
+  {https://github.com/avishkar-004/flash-commerce-ui}
+  {Built a modern e-commerce interface with reusable UI components and responsive product browsing flows.}
+}
+
+\newcommand{\ProjectDarkStore}{
+\project
+  {City-wide Dark Store Network Projection}
+  {JavaScript, location analytics}
+  {https://github.com/avishkar-004/city-wide-dark-store-network-projection}
+  {Built a location analytics tool for projecting dark-store placement across cities using demand, service-area, and accessibility considerations.}
+}
+
+\begin{document}
+\fontsize{9.75}{11.1}\selectfont
+
+\begin{center}
+  {\Large \textbf{Avishkar Pawar}}\\[-1pt]
+  {\normalsize \ResumeTitle}\\[2pt]
+  {\small
+  \href{https://github.com/avishkar-004}{GitHub} \textbar{}
+  \href{https://www.linkedin.com/in/avishkarpawar}{LinkedIn} \textbar{}
+  \href{https://avishkar-004.github.io}{Portfolio} \textbar{}
+  \href{mailto:avishkarpawar004@gmail.com}{avishkarpawar004@gmail.com} \textbar{}
+  \href{tel:+918623005430}{+91-8623005430} \textbar{}
+  Pune, India}
+\end{center}
+\vspace{-8pt}
+
+\section{Summary}
+\ResumeSummary
+
+\section{Work Experience}
+\begin{joblong}{Software Developer Intern, OSMOS}{Jul 2025 - May 2026}
+\item Developed backend services using Node.js and Python for application and product development.
+\item Contributed to product development from scratch by designing, implementing, testing, and improving core features.
+\end{joblong}
+
+\begin{joblong}{Software Developer Intern, Core-Decimal Solutions}{Feb 2025 - Aug 2025}
+\item Built full-stack features using Vue.js, Express.js, Sequelize, and MySQL in an MVC architecture.
+\item Developed reusable Vue.js components, integrated RESTful APIs with Axios, and designed Sequelize data mappings.
+\end{joblong}
+
+\begin{joblong}{Software Development Intern, Campus Credential}{2024}
+\item Worked on web application features, database-backed workflows, and production-oriented bug fixes.
+\end{joblong}
+
+\section{Projects}
+\ResumeProjects
+
+\section{Education}
+\resumeHeader{B.Tech. in Computer Engineering, MIT Academy of Engineering, Pune}{2022 - 2026}
+CGPA: 9.24/10
+
+\section{Achievements}
+\begin{itemize}
+\item GATE 2026 Qualified: AIR 3124, GATE Score 601, 51.45/100 marks in Computer Science.
+\item GATE 2025 Qualified: AIR 9860, GATE Score 453, 39.32/100 marks.
+\item First Place, Technodium 25 technical competition.
+\item Certifications: AWS Cloud Practitioner, CCNA, Python Essentials, PCAP, NPTEL Modern C++, NPTEL Machine Learning, NPTEL DSA, NPTEL Cloud Computing, NPTEL Cryptography, Saylor Cryptography, Red Hat Academy.
+\end{itemize}
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.9in}@{\hspace{0.12in}}X@{}}
+Focus Areas & \ResumeFocusSkills \\
+Languages & C++, Java, Python, JavaScript, TypeScript, SQL, PHP \\
+Frameworks & Spring Boot, FastAPI, React, Node.js, Express.js, Vue.js, Flask \\
+Databases & PostgreSQL, MySQL, MongoDB, Redis, custom database implementations \\
+AI/ML & TensorFlow, PyTorch, OpenAI API, LangChain, NumPy, Numba, computer vision \\
+Tools & Git, Docker, Linux, AWS, CMake, Maven, Prometheus, REST APIs \\
+Core CS & Data Structures and Algorithms, Operating Systems, Database Systems, Computer Networks, Distributed Systems, System Design \\
+\end{tabularx}
+
+\end{document}

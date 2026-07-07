@@ -16,7 +16,7 @@
 
 - 🎓 **B.Tech Computer Engineering** @ MIT Academy of Engineering, Pune — **CGPA 9.24/10**
 - 🏆 **GATE 2026 Qualified** — AIR **3124** | Score **601** | 51.45/100 marks *(3x improvement from GATE 2025 AIR 9860)*
-- 💼 **Software Developer** @ OSMOS (Jul 2025 – Present)
+- 💼 **Software Developer Intern** @ OSMOS (Jul 2025 – May 2026)
 - 🔧 Building production-grade distributed systems from scratch in **C++, Java, and Python**
 - 📄 **13 Certifications** including CCNA (3x), PCAP, NPTEL courses, and Saylor University
 

@@ -1,0 +1,185 @@
+\documentclass[letterpaper,11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+% ---------- Page Setup ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% ---------- Section Formatting ----------
+\titleformat{\section}
+{
+  \vspace{-4pt}\scshape\raggedright\large
+}
+{}{0em}{}[\titlerule \vspace{-5pt}]
+
+% ---------- Custom Commands ----------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small\textbf{#1} & \small #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.2in]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-5pt}
+}
+
+% ---------- Resume Starts ----------
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+    \textbf{\Huge \scshape Avishkar Pawar} \\ \vspace{2pt}
+    \small
+    Pune, India $|$
+    \href{mailto:avishkarpawar004@gmail.com}{avishkarpawar004@gmail.com} $|$
+    +91-XXXXXXXXXX $|$
+    \href{https://github.com/avishkar-004}{github.com/avishkar-004} $|$
+    \href{https://avishkar-004.github.io}{avishkar-004.github.io} $|$
+    \href{https://www.linkedin.com/in/your-linkedin}{linkedin.com/in/your-linkedin}
+\end{center}
+
+% ---------- Summary ----------
+\section{Summary}
+\small{
+Computer Engineering graduate with experience in C++, Java, Python, backend systems, distributed systems, databases, and machine learning. Built projects involving MVCC, Raft consensus, B+ Tree indexing, vector search, Kafka-like streaming, and real-time ML inference. Strong foundation in data structures, algorithms, operating systems, DBMS, and computer networks.
+}
+
+% ---------- Education ----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{MIT Academy of Engineering}{Pune, India}
+{B.Tech in Computer Engineering; CGPA: 9.24/10}{2023 -- 2026}
+
+\resumeSubheading
+{Government Polytechnic}{Maharashtra, India}
+{Diploma in Computer Engineering}{2020 -- 2023}
+
+\resumeSubHeadingListEnd
+
+% ---------- Skills ----------
+\section{Technical Skills}
+\small{
+\textbf{Languages:} C++, Java, Python, JavaScript, SQL \\
+\textbf{Backend:} Spring Boot, FastAPI, REST APIs, Netty, Microservices \\
+\textbf{Databases:} MySQL, PostgreSQL, MongoDB, B+ Trees, Indexing, Query Processing \\
+\textbf{Systems:} Operating Systems, Linux, Distributed Systems, Raft, MVCC, Sharding, Replication \\
+\textbf{Tools:} Git, GitHub, Docker, Prometheus, Postman, VS Code \\
+\textbf{Machine Learning:} Scikit-learn, MediaPipe, Random Forest, SVM, KNN, MLP
+}
+
+% ---------- Experience ----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Developer Intern}{Remote / India}
+{Company Name}{Month Year -- Month Year}
+\resumeItemListStart
+  \resumeItem{Developed and maintained backend/frontend features using modern software engineering practices.}
+  \resumeItem{Worked on debugging, API integration, database operations, and performance improvements.}
+  \resumeItem{Collaborated with team members to deliver production-ready features in a fast-paced environment.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ---------- Projects ----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{MiniDB: Distributed Database Engine $|$ C++, Raft, MVCC, B+ Tree}{}
+\resumeItemListStart
+  \resumeItem{Built a distributed database engine with B+ Tree indexing, SQL-like query processing, and JOIN support.}
+  \resumeItem{Implemented MVCC-based concurrency control to support transactional consistency.}
+  \resumeItem{Added Raft consensus, consistent hash sharding, replication, and monitoring support.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{VectorFlow: Vector Database $|$ Python, FastAPI, HNSW, RAG}{}
+\resumeItemListStart
+  \resumeItem{Designed a vector database with HNSW approximate nearest neighbor search and WAL-based persistence.}
+  \resumeItem{Implemented sharding, REST APIs, and RAG pipeline integration for semantic search use cases.}
+  \resumeItem{Optimized vector search workflow for efficient retrieval and scalable indexing.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{StreamFlow: Kafka-like Streaming System $|$ Java, Netty, Docker}{}
+\resumeItemListStart
+  \resumeItem{Built a Kafka-like event streaming system using Java and Netty TCP networking.}
+  \resumeItem{Implemented topic partitions, consumer groups, leader-follower replication, and ISR tracking.}
+  \resumeItem{Added Docker deployment, Prometheus monitoring, and zero-copy I/O support.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Real-Time Sign Language Recognition $|$ Python, MediaPipe, ML}{}
+\resumeItemListStart
+  \resumeItem{Built a real-time static sign language recognition system using MediaPipe hand landmarks and classical ML.}
+  \resumeItem{Achieved 99.12\% accuracy on ASL Alphabet dataset using Random Forest.}
+  \resumeItem{Designed feature extraction pipeline supporting real-time CPU inference at approximately 30 FPS.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+% ---------- Achievements ----------
+\section{Achievements}
+\resumeItemListStart
+  \resumeItem{GATE CS 2026: AIR 3124, Score 601.}
+  \resumeItem{Maintained academic CGPA of 9.24/10 in Computer Engineering.}
+  \resumeItem{Built multiple system-level projects involving databases, distributed systems, and backend engineering.}
+\resumeItemListEnd
+
+% ---------- Coursework ----------
+\section{Relevant Coursework}
+\small{
+Data Structures and Algorithms, Operating Systems, Database Management Systems, Computer Networks, Object-Oriented Programming, Distributed Systems, Machine Learning, Software Engineering
+}
+
+% ---------- Resume Ends ----------
+\end{document}
