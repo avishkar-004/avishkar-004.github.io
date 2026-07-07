@@ -5,7 +5,7 @@
 **Systems Engineer | Backend Developer | AI/ML Engineer**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/avishkarpawar)
-[![Portfolio](https://img.shields.io/badge/Portfolio-3A8F85?style=for-the-badge&logo=safari&logoColor=white)](https://avishkar-004.github.io/avishkar-004/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-3A8F85?style=for-the-badge&logo=safari&logoColor=white)](https://avishkar-004.github.io/)
 [![Credly](https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white)](https://www.credly.com/users/avishkar-pawar)
 
 </div>
@@ -137,5 +137,5 @@ HNSW indexing for ANN search, FastAPI REST server, WAL persistence, consistent h
 ---
 
 <div align="center">
-<i>Press ` on my <a href="https://avishkar-004.github.io/avishkar-004/">portfolio</a> for a hidden terminal Easter egg 🖥️</i>
+<i>Press ` on my <a href="https://avishkar-004.github.io/">portfolio</a> for a hidden terminal Easter egg 🖥️</i>
 </div>

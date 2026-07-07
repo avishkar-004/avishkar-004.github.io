@@ -4,11 +4,8 @@
    ================================================================ */
 
 // ===== 1. TERMINAL BOOT CLASS =====
-// We show the full ~15s boot animation when a visitor hasn't seen it in the
-// last 30 days. Returning-soon visitors (recruiter who reopens next morning,
-// power user who reloads, etc.) skip straight to the portfolio. After 30
-// days the timestamp is considered stale and the boot plays again \u2014 fresh
-// content for someone returning after a long gap.
+// The boot animation is short and skippable so first-time recruiters can get
+// to the portfolio quickly. Returning visitors within the TTL skip it entirely.
 // Anyone can also press Escape / Space / Enter or click to skip immediately.
 var BOOT_STORAGE_KEY = 'avishkar_boot_seen_at_v2';
 var BOOT_TTL_DAYS = 30;
@@ -19,6 +16,11 @@ var TerminalBoot = (function () {
     this.output = document.getElementById('boot-output');
     this.container = document.getElementById('terminal-boot');
     if (!this.output || !this.container) return;
+
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.finish();
+      return;
+    }
 
     // Returning visitor within TTL \u2014 skip the show entirely.
     try {
@@ -32,17 +34,16 @@ var TerminalBoot = (function () {
       /* localStorage blocked (private mode, etc.) \u2014 fall through to play */
     }
 
-    this.charDelay = 25;
+    this.charDelay = 10;
+    this.lineDelay = 35;
+    this.progressDelay = 18;
     this.skipped = false;
     this.lines = [
       { text: '> initializing avishkar.system v2.0...', color: '#7ECEC0' },
-      { text: '> loading modules...', color: '#7ECEC0' },
       { text: '  [progress]', color: '#7ECEC0', isProgress: true },
       { text: '> distributed_database    [loaded] \u2713', color: '#7ECEC0' },
       { text: '> event_streaming         [loaded] \u2713', color: '#7ECEC0' },
       { text: '> vector_database         [loaded] \u2713', color: '#7ECEC0' },
-      { text: '> GATE 2026: AIR 3124 | Score: 601 \u2713', color: '#7ECEC0' },
-      { text: '> certifications: 8 loaded \u2713', color: '#7ECEC0' },
       { text: '> system ready. launching portfolio...', color: '#7ECEC0' }
     ];
     this.currentLine = 0;
@@ -66,12 +67,16 @@ var TerminalBoot = (function () {
   TerminalBoot.prototype.skip = function () {
     if (this.skipped) return;
     this.skipped = true;
-    try { window.localStorage.setItem(BOOT_STORAGE_KEY, String(Date.now())); } catch (e) {}
-    this.container.classList.add('boot-done');
+    this.finish();
     if (this._skipHandler) {
       document.removeEventListener('keydown', this._skipHandler);
       this.container.removeEventListener('click', this._skipHandler);
     }
+  };
+
+  TerminalBoot.prototype.finish = function () {
+    try { window.localStorage.setItem(BOOT_STORAGE_KEY, String(Date.now())); } catch (e) {}
+    this.container.classList.add('boot-done');
   };
 
   TerminalBoot.prototype.start = function () {
@@ -82,12 +87,11 @@ var TerminalBoot = (function () {
     var self = this;
     if (self.skipped) return;   // user already skipped — drop out of the typing loop
     if (self.currentLine >= self.lines.length) {
-      // All lines done — wait 500ms then add boot-done class and mark this
+      // All lines done — wait briefly then add boot-done class and mark this
       // visitor as having seen the boot so future page loads skip it.
       setTimeout(function () {
-        try { window.localStorage.setItem(BOOT_STORAGE_KEY, String(Date.now())); } catch (e) {}
-        self.container.classList.add('boot-done');
-      }, 500);
+        self.finish();
+      }, 250);
       return;
     }
 
@@ -121,7 +125,7 @@ var TerminalBoot = (function () {
         // Small gap between lines
         setTimeout(function () {
           self.typeLine();
-        }, 80);
+        }, self.lineDelay);
       }
     }
 
@@ -161,7 +165,7 @@ var TerminalBoot = (function () {
         var pct = Math.round((currentBlock / totalBlocks) * 100);
         suffixSpan.textContent = suffix + pct + '%';
         self.scrollOutputDown();
-        setTimeout(addBlock, 40);
+        setTimeout(addBlock, self.progressDelay);
       } else {
         self.output.appendChild(document.createTextNode('\n'));
         callback();

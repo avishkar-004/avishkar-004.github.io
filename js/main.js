@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavigation();
   initThemeToggle();
   initScrollProgress();
+  initResumeLink();
   populateHero();
   populateAbout();
   populateSkills();
@@ -97,6 +98,14 @@ function initNavigation() {
       }
     });
   });
+}
+
+function initResumeLink() {
+  var resumeLink = document.getElementById('resume-link');
+  var personal = portfolioData.personal || {};
+  if (resumeLink && personal.resume) {
+    resumeLink.setAttribute('href', personal.resume);
+  }
 }
 
 // ===== 2. THEME TOGGLE =====
@@ -307,6 +316,11 @@ function initProjectFilters() {
       // Filter with fade animation
       projectCards.forEach(function (card) {
         var matches = filter === 'all' || card.getAttribute('data-category') === filter;
+        if (card._filterHideTimer) {
+          clearTimeout(card._filterHideTimer);
+          card._filterHideTimer = null;
+        }
+
         if (matches) {
           card.style.display = '';
           // Trigger reflow then fade in
@@ -320,8 +334,14 @@ function initProjectFilters() {
         } else {
           card.style.transition = 'opacity 0.25s ease';
           card.style.opacity = '0';
-          setTimeout(function () {
-            card.style.display = 'none';
+          card._filterHideTimer = setTimeout(function () {
+            var activeBtn = document.querySelector('.filter-btn.active');
+            var activeFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+            var stillHidden = activeFilter !== 'all' && card.getAttribute('data-category') !== activeFilter;
+            if (stillHidden) {
+              card.style.display = 'none';
+            }
+            card._filterHideTimer = null;
           }, 250);
         }
       });
