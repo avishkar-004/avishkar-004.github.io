@@ -1097,6 +1097,12 @@ button {
   line-height: 1.7;
 }
 
+.education-entry + .education-entry {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
 /* ===== BENTO GATE CARD ===== */
 .bento-gate {
   display: flex;

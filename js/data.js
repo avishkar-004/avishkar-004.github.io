@@ -1,9 +1,9 @@
 var PORTFOLIO_DATA = {
   "personal": {
     "name": "Avishkar Mahesh Pawar",
-    "title": "Computer Engineering Student | Systems & AI/ML Engineer",
+    "title": "M.Tech. CSE Student | Systems & AI/ML Engineer",
     "tagline": "Building production-grade distributed systems from scratch",
-    "bio": "Final-year Computer Engineering student at MIT Academy of Engineering, Pune with 9.24 CGPA. Built 3 production-grade distributed systems from scratch \u2014 a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) \u2014 a 3x rank improvement from GATE 2025. Completed a Software Developer internship at OSMOS in May 2026.",
+    "bio": "M.Tech. Computer Science and Engineering student at IIT Dharwad (2026 - 2028), following a B.Tech. in Computer Engineering from MIT Academy of Engineering, Pune with a 9.24 CGPA. Built 3 production-grade distributed systems from scratch \u2014 a database engine in C++, an event streaming platform in Java, and an AI-powered vector database in Python. GATE 2026 qualified (AIR 3124) \u2014 a 3x rank improvement from GATE 2025. Completed a Software Developer internship at OSMOS in May 2026.",
     "image": "assets/profile.png",
     "resume": "resumes/Avishkar_Pawar_SDE_Resume.pdf",
     "email": "avishkarpawar004@gmail.com",
@@ -16,14 +16,22 @@ var PORTFOLIO_DATA = {
       "credly": "https://www.credly.com/users/avishkar-pawar.3cf03fe8"
     }
   },
-  "education": {
-    "degree": "B.Tech. - Computer Engineering",
-    "university": "MIT Academy of Engineering, Pune",
-    "duration": "2022 - 2026",
-    "cgpa": "9.24",
-    "cgpa_scale": "10",
-    "logo": "assets/mit-logo.png"
-  },
+  "education": [
+    {
+      "degree": "M.Tech. - Computer Science and Engineering",
+      "university": "Indian Institute of Technology Dharwad",
+      "duration": "2026 - 2028",
+      "status": "Ongoing"
+    },
+    {
+      "degree": "B.Tech. - Computer Engineering",
+      "university": "MIT Academy of Engineering, Pune",
+      "duration": "2022 - 2026",
+      "cgpa": "9.24",
+      "cgpa_scale": "10",
+      "logo": "assets/mit-logo.png"
+    }
+  ],
   "skills": {
     "languages": [
       "C++",

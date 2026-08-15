@@ -204,10 +204,18 @@ function populateAbout() {
   // Education details
   var eduEl = document.getElementById('education-details');
   if (eduEl) {
-    eduEl.innerHTML =
-      '<h4>' + education.degree + '</h4>' +
-      '<p>' + education.university + '</p>' +
-      '<p><strong>CGPA:</strong> ' + education.cgpa + '/' + education.cgpa_scale + ' | ' + education.duration + '</p>';
+    var educationEntries = Array.isArray(education) ? education : [education];
+    eduEl.innerHTML = educationEntries.map(function (entry) {
+      var details = entry.cgpa
+        ? '<strong>CGPA:</strong> ' + entry.cgpa + '/' + entry.cgpa_scale + ' | ' + entry.duration
+        : '<strong>' + entry.status + '</strong> | ' + entry.duration;
+
+      return '<div class="education-entry">' +
+        '<h4>' + entry.degree + '</h4>' +
+        '<p>' + entry.university + '</p>' +
+        '<p>' + details + '</p>' +
+        '</div>';
+    }).join('');
   }
 }
 
